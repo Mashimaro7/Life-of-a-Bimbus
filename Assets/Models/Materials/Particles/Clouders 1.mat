@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Clouders 1
+  m_Shader: {fileID: -6465566751694194690, guid: c6ad0eb75ca8c104d954566c8e4f29d2, type: 3}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs: []
+    m_Floats:
+    - Vector1_1F62EDAF: 0.01
+    - Vector1_2274E070: 30
+    - Vector1_2456CE49: -1
+    - Vector1_2871A448: 2
+    - Vector1_5C7EBFAB: 1.5
+    - Vector1_7D63B9D2: 2
+    - Vector1_8D15E5F2: 1
+    - Vector1_CAB7A78C: 20
+    - Vector1_D9413945: 2
+    m_Colors:
+    - Color_29934B11: {r: 0.7924528, g: 0.7924528, b: 0.7924528, a: 0.7529412}
+    - Color_40FA2B1E: {r: 0.7830189, g: 0.7830189, b: 0.7830189, a: 0}
+    - Color_C5476EAD: {r: 0.5943396, g: 0.5747152, b: 0.5747152, a: 0}
+    - Vector4_3AB261AD: {r: 1, g: 0, b: 0, a: 90}
+    - Vector4_CCAB558E: {r: 0, g: 1, b: -0.3, a: 2.7}
+    - Vector4_EB34A2F6: {r: 0.02, g: 0, b: 0, a: 0}
+  m_BuildTextureStacks: []
