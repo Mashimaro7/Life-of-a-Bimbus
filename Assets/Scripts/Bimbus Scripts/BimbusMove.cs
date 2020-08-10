@@ -35,6 +35,7 @@ public class BimbusMove : MonoBehaviour
     }
     private void Update()
     {
+        
         if (!stats.isDead)
         {
             float speed = 0;
@@ -48,7 +49,6 @@ public class BimbusMove : MonoBehaviour
     }
     IEnumerator GetUp()
     {
-        print("Get up get up, we never get down");
 
         var step = riseSpeed * Time.deltaTime;
         rising = true;

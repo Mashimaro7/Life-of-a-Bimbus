@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class TimeOfDay : MonoBehaviour
 {
-    public float maxNightTime, maxDayTime,maxTime, sunIntensityGoal, moonIntensityGoal, temperature, timeMultiplier = 1, randomWeatherDelay, sunIntensityMultiplier = 1f;
+    public float maxNightTime, maxDayTime,maxTime, sunIntensityGoal, moonIntensityGoal, temperature, timeMultiplier = 1,minRandomWeatherDelay ,maxRandomWeatherDelay, sunIntensityMultiplier = 1f;
     public float sunInitIntense, weatherDelay;
     private WeatherControl weather;
     [Range(0, 1)] [SerializeField]private float weatherOfDay, timeOfDay, timeToTurnNight, timeToTurnDay;
@@ -21,11 +21,12 @@ public class TimeOfDay : MonoBehaviour
 
     void Start()
     {
+        print(Random.Range(0, 9999));
         bimbi = new List<BimbuStats>();
         weather = FindObjectOfType<WeatherControl>();
         sunInitIntense = sunLight.intensity;
-        seasons = new string[] { "Spring", "Summer", "Fall", "Winter" };
-        avgTemp = new int[daysInYear];
+        seasons = new string[] { "IDSpring", "IDSummer", "IDFall", "IDWinter" };
+        avgTemp = new int[4];
         StartCoroutine(RandomWeather());
     }
 
@@ -101,7 +102,7 @@ public class TimeOfDay : MonoBehaviour
     IEnumerator RandomWeather()
     {
         weatherOfDay = Random.Range(0f, 1f);
-        if(weatherOfDay > 0.3f && !isNight)
+        if(weatherOfDay > 0.3f)
         {
             SunnyTime();
         }
@@ -110,7 +111,7 @@ public class TimeOfDay : MonoBehaviour
         {
             RainDay();
         }
-        yield return new WaitForSeconds(weatherDelay + Random.Range(0, randomWeatherDelay));
+        yield return new WaitForSeconds(weatherDelay + Random.Range(minRandomWeatherDelay, maxRandomWeatherDelay));
         StartCoroutine(RandomWeather());
     }
 

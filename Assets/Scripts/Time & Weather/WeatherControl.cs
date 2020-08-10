@@ -51,7 +51,7 @@ public class WeatherControl : MonoBehaviour
     public void StartCloudyDay()
     {
         ParticleSystem.EmissionModule cloud= particles[0].emission;
-        cloud.rateOverTime = cloudRate * (clouds * 10f);
+        cloud.rateOverTime = cloudRate * (clouds);
     }
 
     public void ClearClouds()
