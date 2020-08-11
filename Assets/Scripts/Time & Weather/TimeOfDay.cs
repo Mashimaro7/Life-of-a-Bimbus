@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class TimeOfDay : MonoBehaviour
 {
-    public float maxNightTime, maxDayTime,maxTime, sunIntensityGoal, moonIntensityGoal, temperature, timeMultiplier = 1, randomWeatherDelay, sunIntensityMultiplier = 1f;
+    public float maxNightTime = 600, maxDayTime = 600, sunIntensityGoal = 2f, moonIntensityGoal= 1, temperature, timeMultiplier = 1,minRandomWeatherDelay =50 ,maxRandomWeatherDelay = 300, sunIntensityMultiplier = 1f;
     public float sunInitIntense, weatherDelay;
+    private float maxTime;
     private WeatherControl weather;
-    [Range(0, 1)] [SerializeField]private float weatherOfDay, timeOfDay, timeToTurnNight, timeToTurnDay;
+    [Range(0, 1)] [SerializeField]private float weatherOfDay, timeOfDay, timeToTurnNight = 0.65f, timeToTurnDay =0.2f;
     public int calendarDay = 1, yearNum;
     public const int daysInYear = 40;
     public Light sunLight, moonLight;
@@ -19,13 +20,17 @@ public class TimeOfDay : MonoBehaviour
     List<BimbuStats> bimbi = new List<BimbuStats>();
     public int[] avgTemp;
 
-    void Start()
+    void Awake()
     {
+        maxTime = maxDayTime + maxNightTime;
+        sunLight = this.transform.Find("Sun").GetComponent<Light>() ;
+        moonLight = this.transform.Find("Moon").GetComponent<Light>();
+        print(Random.Range(0, 9999));
         bimbi = new List<BimbuStats>();
         weather = FindObjectOfType<WeatherControl>();
         sunInitIntense = sunLight.intensity;
-        seasons = new string[] { "Spring", "Summer", "Fall", "Winter" };
-        avgTemp = new int[daysInYear];
+        seasons = new string[] { "IDSpring", "IDSummer", "IDFall", "IDWinter" };
+        avgTemp = new int[4];
         StartCoroutine(RandomWeather());
     }
 
@@ -63,7 +68,7 @@ public class TimeOfDay : MonoBehaviour
             }
         }
 
-        sunLight.transform.localRotation = Quaternion.Euler((timeOfDay * 360) -90,170,0);
+        sunLight.transform.rotation = Quaternion.Euler((timeOfDay * 360) -90,170,0);
         moonLight.transform.eulerAngles = new Vector3(moonLight.transform.eulerAngles.x, maxNightTime / 10 - (timeOfDay / 5), moonLight.transform.eulerAngles.z);
     }
     IEnumerator SunShine()
@@ -101,7 +106,7 @@ public class TimeOfDay : MonoBehaviour
     IEnumerator RandomWeather()
     {
         weatherOfDay = Random.Range(0f, 1f);
-        if(weatherOfDay > 0.3f && !isNight)
+        if(weatherOfDay > 0.3f)
         {
             SunnyTime();
         }
@@ -110,7 +115,7 @@ public class TimeOfDay : MonoBehaviour
         {
             RainDay();
         }
-        yield return new WaitForSeconds(weatherDelay + Random.Range(0, randomWeatherDelay));
+        yield return new WaitForSeconds(weatherDelay + Random.Range(minRandomWeatherDelay, maxRandomWeatherDelay));
         StartCoroutine(RandomWeather());
     }
 

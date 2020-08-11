@@ -64,7 +64,7 @@ public class BimbuStats : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         if (age >= maxAge) isDead = true;
         hunger -= (Time.deltaTime /3);
@@ -82,6 +82,11 @@ public class BimbuStats : MonoBehaviour
         {
             ReceiveDamage(Time.deltaTime);
         }
+        if (temp < -30f)
+        {
+            ReceiveDamage(Time.deltaTime / 3f);
+        }
     }
+    
 }
 

@@ -12,7 +12,8 @@ public class BimbusMove : MonoBehaviour
     private BimbuStats stats;
     public float riseSpeed;
     public Transform transformo;
-    public bool rising;
+    private bool rising;
+    public float speed = 0;
 
     public void Start()
     {
@@ -35,20 +36,15 @@ public class BimbusMove : MonoBehaviour
     }
     private void Update()
     {
+        
         if (!stats.isDead)
         {
-            float speed = 0;
             speed = navAgent.velocity.magnitude / navAgent.speed;
             animator.SetFloat("speed", speed, animDelay, Time.deltaTime);
-            if (transform.rotation.x > 10 || transform.rotation.x < -10)
-            {
-                if(!rising) StartCoroutine(GetUp());
-            }
         }
     }
     IEnumerator GetUp()
     {
-        print("Get up get up, we never get down");
 
         var step = riseSpeed * Time.deltaTime;
         rising = true;

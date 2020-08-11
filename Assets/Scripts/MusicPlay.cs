@@ -4,24 +4,31 @@ using UnityEngine;
 
 public class MusicPlay : MonoBehaviour
 {
-    public float timeToWait = 20;
+    public float minTimeToWait = 20, maxTimeToWait = 100;
     public AudioSource musicPlay;
     public AudioClip[] music;
-    int randomSong;
     bool coroutineActive;
 
-    private AudioClip GetRandomSong()
+    private void Awake()
     {
-        return music[Random.Range(0, music.Length)];
+        music = Resources.LoadAll<AudioClip>("Sounds/BGM");
+
     }
     void Start()
     {
+
         musicPlay = this.GetComponent<AudioSource>();
         if (!musicPlay.isPlaying)
         { 
         musicPlay.clip = GetRandomSong();      
         }
     }
+
+    private AudioClip GetRandomSong()
+    {
+        return music[Random.Range(0, music.Length)];
+    }
+
     void Update()
     {
         if (!musicPlay.isPlaying && !coroutineActive )
@@ -34,7 +41,7 @@ public class MusicPlay : MonoBehaviour
     }
     IEnumerator MusicPlayo()
     {
-        yield return new WaitForSeconds(Random.Range(10,100));
+        yield return new WaitForSeconds(Random.Range(minTimeToWait,maxTimeToWait));
         musicPlay.Play();
         coroutineActive = false;
     }

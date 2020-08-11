@@ -8,6 +8,7 @@ public class WanderAI : MonoBehaviour
 
     private bool isWandering;
     private bool isWalking;
+    [SerializeField] private float wanderRange = 6, minWanderRange = 2;
     BimbuStats bimbus;
     public Rigidbody rb;
     public NavMeshAgent nav;
@@ -32,7 +33,15 @@ public class WanderAI : MonoBehaviour
         }
         if (isWalking && !bimbus.isDead)
         {
-            move.MoveUnit(transform.position + new Vector3(Random.Range(-6, 6), 0, Random.Range(-6,6)));
+            Vector3 dest = new Vector3(Random.Range(-wanderRange, wanderRange),0,Random.Range(-wanderRange,wanderRange));
+            if (Vector3.Distance(transform.position, dest) > minWanderRange)
+            {
+                move.MoveUnit(transform.position + dest);
+            }
+            else
+            {
+                dest = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
+            }
             isWalking = false;
         }
     }
