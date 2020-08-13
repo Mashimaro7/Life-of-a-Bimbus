@@ -38,6 +38,7 @@ public class BimbusMove : MonoBehaviour
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         if (speed > 0.2f)
         {
             moving = true;
@@ -52,6 +53,9 @@ public class BimbusMove : MonoBehaviour
 =======
         
 >>>>>>> parent of 99ad2c4... 0.13
+=======
+        
+>>>>>>> parent of 99ad2c4... 0.13
         if (!stats.isDead)
         {
             speed = navAgent.velocity.magnitude / navAgent.speed;
@@ -62,8 +66,11 @@ public class BimbusMove : MonoBehaviour
     {
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         step.Play();
 =======
+=======
+>>>>>>> parent of 99ad2c4... 0.13
 =======
 >>>>>>> parent of 99ad2c4... 0.13
 
@@ -73,7 +80,10 @@ public class BimbusMove : MonoBehaviour
         Quaternion.RotateTowards(transformo.rotation, transformo.rotation,step);
         rising = false;
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79
+=======
+>>>>>>> parent of 99ad2c4... 0.13
 =======
 >>>>>>> parent of 99ad2c4... 0.13
     }
