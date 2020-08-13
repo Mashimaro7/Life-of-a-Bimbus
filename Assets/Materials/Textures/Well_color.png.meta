@@ -1,13 +1,9 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-<<<<<<< HEAD
-guid: ec583535ea71c1b4cbba013b3c5be3f8
+<<<<<<< HEAD:Assets/Materials/Textures/Well_color.png.meta
+guid: 8986e6439a4171a44ae6aa98c072d2fc
 =======
-guid: e00dd5533a8fef2418327e3e6cc0886f
->>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79
-=======
-guid: e00dd5533a8fef2418327e3e6cc0886f
->>>>>>> parent of 99ad2c4... 0.13
+guid: e4c2de443d3169b4cb9bda0be1dc9ce6
+>>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79:Assets/TerrainGenerator/Terrain_Texture 1.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -15,7 +11,7 @@ TextureImporter:
   mipmaps:
     mipMapMode: 0
     enableMipMap: 1
-    sRGBTexture: 0
+    sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
     borderMipMap: 0
@@ -29,7 +25,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
   isReadable: 0
-  streamingMipmaps: 1
+  streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
   grayScaleToAlpha: 0
@@ -40,12 +36,12 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
-    aniso: 3
-    mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    filterMode: -1
+    aniso: 2
+    mipBias: -100
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 1
   lightmap: 0
   compressionQuality: 50
@@ -71,7 +67,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 8192
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 1
