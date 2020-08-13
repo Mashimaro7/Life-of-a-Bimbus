@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: e4c2de443d3169b4cb9bda0be1dc9ce6
-=======
-<<<<<<< HEAD:Assets/Materials/Textures/Well_color.png.meta
-guid: 8986e6439a4171a44ae6aa98c072d2fc
-=======
-guid: e4c2de443d3169b4cb9bda0be1dc9ce6
->>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79:Assets/TerrainGenerator/Terrain_Texture 1.png.meta
->>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79
+guid: 815f1fbffe67b8d4caf7cb1bd8c82757
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

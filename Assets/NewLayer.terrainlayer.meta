@@ -1,13 +1,5 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
 guid: d4179c7560ba0dd43afd72adbee3fed6
-=======
-<<<<<<< HEAD:Assets/Scenes/MainMap/OcclusionCullingData.asset.meta
-guid: d603c1537ee9878478058af1aa1875c1
-=======
-guid: d4179c7560ba0dd43afd72adbee3fed6
->>>>>>> parent of 99ad2c4... 0.13:Assets/NewLayer.terrainlayer.meta
->>>>>>> parent of 99ad2c4... 0.13
 NativeFormatImporter:
   externalObjects: {}
   mainObjectFileID: 0
