@@ -5,6 +5,7 @@
 "IDsummer","Summer","夏 "
 "IDfall","Fall","秋 "
 <<<<<<< HEAD
+<<<<<<< HEAD
 "IDwinter","Winter","冬"
 "IDspring","Spring","春"
 "IDLoad","Loading~","ロード中~"
@@ -12,3 +13,7 @@
 "IDwinter","Winter","冬 "
 "IDspring","Spring",""
 >>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79
+=======
+"IDwinter","Winter","冬 "
+"IDspring","Spring",""
+>>>>>>> parent of 99ad2c4... 0.13

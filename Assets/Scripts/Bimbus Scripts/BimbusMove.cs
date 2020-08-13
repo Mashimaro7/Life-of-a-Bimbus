@@ -10,14 +10,13 @@ public class BimbusMove : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     private BimbuStats stats;
-    public AudioSource step;
+    public float riseSpeed;
     public Transform transformo;
-    private bool moving;
+    private bool rising;
     public float speed = 0;
 
     public void Start()
     {
-        rb = GetComponent<Rigidbody>();
         transformo = this.transform;
         animator = GetComponent<Animator>();
         stats = GetComponent<BimbuStats>();
@@ -27,7 +26,6 @@ public class BimbusMove : MonoBehaviour
     {
         if (!stats.isDead)
         {
-            moving = true;
             navAgent.destination = dest;
         }
     }
@@ -38,6 +36,7 @@ public class BimbusMove : MonoBehaviour
     }
     private void Update()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         if (speed > 0.2f)
         {
@@ -50,24 +49,32 @@ public class BimbusMove : MonoBehaviour
 =======
         
 >>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79
+=======
+        
+>>>>>>> parent of 99ad2c4... 0.13
         if (!stats.isDead)
         {
             speed = navAgent.velocity.magnitude / navAgent.speed;
             animator.SetFloat("speed", speed, animDelay, Time.deltaTime);
         }
-
     }
-    public void Step()
+    IEnumerator GetUp()
     {
+<<<<<<< HEAD
 <<<<<<< HEAD
         step.Play();
 =======
+=======
+>>>>>>> parent of 99ad2c4... 0.13
 
         var step = riseSpeed * Time.deltaTime;
         rising = true;
         yield return new WaitForSeconds(0.2f);
         Quaternion.RotateTowards(transformo.rotation, transformo.rotation,step);
         rising = false;
+<<<<<<< HEAD
 >>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79
+=======
+>>>>>>> parent of 99ad2c4... 0.13
     }
 }
