@@ -10,13 +10,14 @@ public class BimbusMove : MonoBehaviour
     private Rigidbody rb;
     private Animator animator;
     private BimbuStats stats;
-    public float riseSpeed;
+    public AudioSource step;
     public Transform transformo;
-    private bool rising;
+    private bool moving;
     public float speed = 0;
 
     public void Start()
     {
+        rb = GetComponent<Rigidbody>();
         transformo = this.transform;
         animator = GetComponent<Animator>();
         stats = GetComponent<BimbuStats>();
@@ -26,6 +27,7 @@ public class BimbusMove : MonoBehaviour
     {
         if (!stats.isDead)
         {
+            moving = true;
             navAgent.destination = dest;
         }
     }
@@ -36,20 +38,23 @@ public class BimbusMove : MonoBehaviour
     }
     private void Update()
     {
-        
+        if (speed > 0.2f)
+        {
+            moving = true;
+        }
+        else
+        {
+            moving = false;
+        }
         if (!stats.isDead)
         {
             speed = navAgent.velocity.magnitude / navAgent.speed;
             animator.SetFloat("speed", speed, animDelay, Time.deltaTime);
         }
-    }
-    IEnumerator GetUp()
-    {
 
-        var step = riseSpeed * Time.deltaTime;
-        rising = true;
-        yield return new WaitForSeconds(0.2f);
-        Quaternion.RotateTowards(transformo.rotation, transformo.rotation,step);
-        rising = false;
+    }
+    public void Step()
+    {
+        step.Play();
     }
 }
