@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Materials/Textures/Well_color.png.meta
 guid: 8986e6439a4171a44ae6aa98c072d2fc
+=======
+guid: e4c2de443d3169b4cb9bda0be1dc9ce6
+>>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79:Assets/TerrainGenerator/Terrain_Texture 1.png.meta
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}

@@ -9,7 +9,11 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Terrain_Mat 1
   m_Shader: {fileID: 4800000, guid: 0f4122b9a743b744abe2fb6a0a88868b, type: 3}
+<<<<<<< HEAD:Assets/TerrainGenerator/Terrain_Mat 1.mat
   m_ShaderKeywords: EFFECT_BUMP EFFECT_HUE_VARIATION
+=======
+  m_ShaderKeywords: EFFECT_BUMP
+>>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79:Assets/TerrainGenerator/Terrain_Mat.mat
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0

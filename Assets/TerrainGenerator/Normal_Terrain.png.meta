@@ -18,7 +18,11 @@ TextureImporter:
   bumpmap:
     convertToNormalMap: 1
     externalNormalMap: 0
+<<<<<<< HEAD
     heightScale: 0.011
+=======
+    heightScale: 0.013
+>>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79
     normalMapFilter: 1
   isReadable: 0
   streamingMipmaps: 0

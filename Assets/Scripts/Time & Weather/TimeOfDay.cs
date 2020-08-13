@@ -4,7 +4,11 @@ using UnityEngine;
 
 public class TimeOfDay : MonoBehaviour
 {
+<<<<<<< HEAD
     public float maxNightTime = 600, maxDayTime = 600, sunIntensityGoal = 2f, moonIntensityGoal= 1, temperature, timeMultiplier = 1,minRandomWeatherDelay =50 ,maxRandomWeatherDelay = 300, sunIntensityMultiplier = 1f;
+=======
+    public float maxNightTime, maxDayTime,maxTime, sunIntensityGoal, moonIntensityGoal, temperature, timeMultiplier = 1,minRandomWeatherDelay ,maxRandomWeatherDelay, sunIntensityMultiplier = 1f;
+>>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79
     public float sunInitIntense, weatherDelay;
     private float maxTime;
     private WeatherControl weather;
@@ -22,9 +26,12 @@ public class TimeOfDay : MonoBehaviour
 
     void Awake()
     {
+<<<<<<< HEAD
         maxTime = maxDayTime + maxNightTime;
         sunLight = this.transform.Find("Sun").GetComponent<Light>() ;
         moonLight = this.transform.Find("Moon").GetComponent<Light>();
+=======
+>>>>>>> 7a32e9a78d2c5431339cdcc3544d2ef483840b79
         print(Random.Range(0, 9999));
         bimbi = new List<BimbuStats>();
         weather = FindObjectOfType<WeatherControl>();
