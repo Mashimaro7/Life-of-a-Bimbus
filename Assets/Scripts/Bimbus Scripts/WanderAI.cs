@@ -2,17 +2,43 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+public enum STATES
+    {
+    WANDERING = 0,
+    IDLE = 1,
+    RUNNING = 2,
+    FORAGING = 3,
+    ATTACKING = 4,
+    SLEEPING = 5,
+}
 public class WanderAI : MonoBehaviour
 {
-
-    private bool isWandering;
-    private bool isWalking;
+    private STATES _state;
+    private bool _isWandering;
+    private bool _isWalking;
     [SerializeField] private float wanderRange = 6, minWanderRange = 2;
     BimbuStats bimbus;
     public Rigidbody rb;
     public NavMeshAgent nav;
     BimbusMove move;
+
+    public STATES state
+    {
+        get { return state; }
+        set
+        {
+            StopAllCoroutines();
+
+            _state = value;
+
+            switch(_state)
+            {
+                case STATES.WANDERING:
+                    StartCoroutine (Wander());
+                    break;
+            }
+        }
+    }
 
     private void Start()
     {
@@ -27,11 +53,7 @@ public class WanderAI : MonoBehaviour
         {
             StopAllCoroutines();
         }
-        if (!isWandering)
-        {
-            StartCoroutine(Wander());
-        }
-        if (isWalking && !bimbus.isDead)
+        if (_isWalking && !bimbus.isDead)
         {
             Vector3 dest = new Vector3(Random.Range(-wanderRange, wanderRange),0,Random.Range(-wanderRange,wanderRange));
             if (Vector3.Distance(transform.position, dest) > minWanderRange)
@@ -42,7 +64,7 @@ public class WanderAI : MonoBehaviour
             {
                 dest = new Vector3(Random.Range(-wanderRange, wanderRange), 0, Random.Range(-wanderRange, wanderRange));
             }
-            isWalking = false;
+            _isWalking = false;
         }
     }
 
@@ -56,18 +78,14 @@ public class WanderAI : MonoBehaviour
             float walkWait = Random.Range(0.1f, 4f);
             float walkTime = Random.Range(1f, 4f);
 
-            isWandering = true;
+            _isWandering = true;
 
             yield return new WaitForSeconds(walkWait);
-            isWalking = true;
+            _isWalking = true;
             yield return new WaitForSeconds(walkTime);
-            isWalking = false;
+            _isWalking = false;
 
-            isWandering = false;
-        }
-        else
-        {
-            rb.angularDrag = 1;
+            _isWandering = false;
         }
 
     }

@@ -17,7 +17,7 @@ public class TimeOfDay : MonoBehaviour
     public string[] seasons;
     public bool isNight,sunRising,sunSetting,shineRoutine,moonRoutine;
     public Animator sunAnimator;
-    List<BimbuStats> bimbi = new List<BimbuStats>();
+    List<BimbuStats> bimbi;
     public int[] avgTemp;
 
     void Awake()
@@ -27,6 +27,7 @@ public class TimeOfDay : MonoBehaviour
         moonLight = this.transform.Find("Moon").GetComponent<Light>();
         print(Random.Range(0, 9999));
         bimbi = new List<BimbuStats>();
+        bimbi.Add(FindObjectOfType<BimbuStats>());
         weather = FindObjectOfType<WeatherControl>();
         sunInitIntense = sunLight.intensity;
         seasons = new string[] { "IDSpring", "IDSummer", "IDFall", "IDWinter" };

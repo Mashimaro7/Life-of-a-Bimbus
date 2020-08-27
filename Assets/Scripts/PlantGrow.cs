@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlantGrow : MonoBehaviour
 {
     public float sizeGoal = .1f;
-    public float startSize, timeToMax = 500, maxSize,growthMultiplier = 1;
+    public float startSize = .1f, timeToMax = 500, maxSize = 1,growthMultiplier = 1;
     public Vector3 currentSize;
     public GameObject[] growthStates;
     private bool growing;
@@ -22,26 +22,24 @@ public class PlantGrow : MonoBehaviour
     {
         
         sizeGoal = Mathf.Clamp(sizeGoal,0,maxSize);
-        if(sizeGoal <= maxSize && !growing)
+        if(sizeGoal <= maxSize && !fullyGrown)
         {
-            StartCoroutine(PlantGrower());
+            PlantGrower();
         }
         if(sizeGoal >= maxSize && !fullyGrown)
         {
             fullyGrown = true;
         }
     }
-    IEnumerator PlantGrower()
+     void PlantGrower()
     {
-        growing = true;
-        yield return new WaitForFixedUpdate();
-        sizeGoal += ((Time.deltaTime * growthMultiplier) + Random.Range(0,.000002f)) / timeToMax;
+
+        sizeGoal += ((Time.deltaTime * growthMultiplier * maxSize) + Random.Range(0,.0000005f)) / (timeToMax);
         if (growthStates.Length > 0)
         {
             GetComponent<MeshFilter>().mesh = growthStates[Mathf.CeilToInt(sizeGoal / maxSize) - 1].GetComponent<MeshFilter>().sharedMesh;
         }
         currentSize = new Vector3(sizeGoal, sizeGoal, sizeGoal) ;
         this.transform.localScale = currentSize;
-        growing = false;
     }
 }

@@ -15,6 +15,7 @@ public class BimbuStats : MonoBehaviour
     [Range(0, 100)] private int def = 5;
     [Range(-30, 200)] private float temp;
     public bool isDead, deathRoutine;
+    public string bimbusName;
     Rigidbody rb;
     
     private Animator animator;
@@ -67,8 +68,8 @@ public class BimbuStats : MonoBehaviour
     void FixedUpdate()
     {
         if (age >= maxAge) isDead = true;
-        hunger -= (Time.deltaTime /3);
-        thirst -= (Time.deltaTime /2);
+        hunger -= (Time.deltaTime  + Random.Range(0f, 0.005f)) / 20;
+        thirst -= (Time.deltaTime  + Random.Range(0f, 0.005f)) / 30;
         if(health <= 0)
             {
             isDead = true;

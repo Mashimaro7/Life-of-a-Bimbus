@@ -7,7 +7,7 @@ public class BimbusSelect : MonoBehaviour
 {
     Ray camRay;
     RaycastHit hit;
-    List<BimbusMove> selectedBimbi = new List<BimbusMove>();
+    public List<BimbusMove> selectedBimbi = new List<BimbusMove>();
     bool isDragging = false;
     Vector3 mousePosition,mousePos1, mousePos2, currentDest;
 
