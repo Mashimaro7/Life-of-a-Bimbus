@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: e9e80d3823f9b76498758f7ec0000440
+guid: b30fab7248c4e994b934bcf0f37889b7
 ModelImporter:
   serializedVersion: 20101
   internalIDToNameTable:
@@ -74,7 +74,7 @@ ModelImporter:
       takeName: Armature|SlimeIdle
       internalID: 0
       firstFrame: 0
-      lastFrame: 29
+      lastFrame: 44
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

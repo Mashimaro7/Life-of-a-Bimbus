@@ -13,6 +13,9 @@ public class TextLocalizerUI : MonoBehaviour
     void Start()
     {
         textField = GetComponent<TextMeshProUGUI>();
-        textField.text = localizedString.value;
+        string value = localizedString.value;
+        value = value.TrimStart(' ', '"');
+        value = value.Replace("\"", "");
+        textField.text = value;
     }
 }

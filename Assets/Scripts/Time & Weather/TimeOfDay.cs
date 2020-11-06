@@ -25,7 +25,6 @@ public class TimeOfDay : MonoBehaviour
         maxTime = maxDayTime + maxNightTime;
         sunLight = this.transform.Find("Sun").GetComponent<Light>() ;
         moonLight = this.transform.Find("Moon").GetComponent<Light>();
-        print(Random.Range(0, 9999));
         bimbi = new List<BimbuStats>();
         bimbi.Add(FindObjectOfType<BimbuStats>());
         weather = FindObjectOfType<WeatherControl>();
@@ -76,8 +75,7 @@ public class TimeOfDay : MonoBehaviour
     {
         shineRoutine = true;
         yield return new WaitForSeconds(0.1f);
-        if (sunLight.intensity < sunIntensityGoal) sunLight.intensity += (Time.deltaTime / 10) * sunIntensityMultiplier;
-        if (sunLight.intensity > sunIntensityGoal) sunLight.intensity -= (Time.deltaTime / 10) * sunIntensityMultiplier;
+        if (sunLight.intensity != sunIntensityGoal) sunLight.intensity = Mathf.Lerp(sunLight.intensity, sunIntensityGoal, 1 * Time.deltaTime / 10);
         shineRoutine = false;
         if(sunLight.intensity != sunIntensityGoal && !shineRoutine)
         {

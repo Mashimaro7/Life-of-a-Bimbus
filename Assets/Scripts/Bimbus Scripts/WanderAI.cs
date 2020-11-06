@@ -10,14 +10,16 @@ public enum STATES
     FORAGING = 3,
     ATTACKING = 4,
     SLEEPING = 5,
+    DEAD = 6
 }
+
 public class WanderAI : MonoBehaviour
 {
-    private STATES _state;
-    private bool _isWandering;
-    private bool _isWalking;
+    private STATES _state = 0;
+    private bool _isWandering = true;
+    private bool _isWalking = false;
     [SerializeField] private float wanderRange = 6, minWanderRange = 2;
-    BimbuStats bimbus;
+    public BimbuStats bimbus;
     public Rigidbody rb;
     public NavMeshAgent nav;
     BimbusMove move;
@@ -33,8 +35,8 @@ public class WanderAI : MonoBehaviour
 
             switch(_state)
             {
-                case STATES.WANDERING:
-                    StartCoroutine (Wander());
+                case 0:
+                    StartCoroutine(Wander());
                     break;
             }
         }
@@ -42,10 +44,11 @@ public class WanderAI : MonoBehaviour
 
     private void Start()
     {
+        StartCoroutine(Wander());
         move = GetComponent<BimbusMove>();
         nav = this.GetComponent<NavMeshAgent>();
         rb = GetComponent<Rigidbody>();
-        bimbus = FindObjectOfType<BimbuStats>();
+        bimbus = GetComponent<BimbuStats>();
     }
     void Update()
     {
@@ -70,11 +73,8 @@ public class WanderAI : MonoBehaviour
 
     IEnumerator Wander()
     {
-        if(!bimbus.isDead)
+        if(_state != STATES.DEAD)
         {
-
-
-
             float walkWait = Random.Range(0.1f, 4f);
             float walkTime = Random.Range(1f, 4f);
 
@@ -84,7 +84,7 @@ public class WanderAI : MonoBehaviour
             _isWalking = true;
             yield return new WaitForSeconds(walkTime);
             _isWalking = false;
-
+            StartCoroutine(Wander());
             _isWandering = false;
         }
 

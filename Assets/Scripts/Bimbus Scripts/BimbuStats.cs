@@ -32,6 +32,7 @@ public class BimbuStats : MonoBehaviour
     }
     void Start()
     {
+        bimbusName = RandomNameGenerator.GetRandomName();
         temp = 20f;
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody>();
@@ -42,7 +43,7 @@ public class BimbuStats : MonoBehaviour
         deathRoutine = true;
         rb.constraints = RigidbodyConstraints.None;
         animator.SetBool("isDead", true);
-        Destroy(GetComponent<NavMeshAgent>());
+        //Destroy(GetComponent<NavMeshAgent>());
         yield return new WaitForFixedUpdate();
         rb.AddTorque(Random.Range(-30,30), 0, Random.Range(-30, 30));
     }
@@ -65,7 +66,7 @@ public class BimbuStats : MonoBehaviour
         }
     }
 
-    void FixedUpdate()
+    void Update()
     {
         if (age >= maxAge) isDead = true;
         hunger -= (Time.deltaTime  + Random.Range(0f, 0.005f)) / 20;
@@ -87,6 +88,7 @@ public class BimbuStats : MonoBehaviour
         {
             ReceiveDamage(Time.deltaTime / 3f);
         }
+
     }
     
 }

@@ -8,7 +8,7 @@ public class BimbusMove : MonoBehaviour
     const float animDelay = .1f;
     public NavMeshAgent navAgent;
     private Rigidbody rb;
-    private Animator animator;
+    private Animator anim;
     private BimbuStats stats;
     public float riseSpeed;
     public Transform transformo;
@@ -18,7 +18,7 @@ public class BimbusMove : MonoBehaviour
     public void Start()
     {
         transformo = this.transform;
-        animator = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
         stats = GetComponent<BimbuStats>();
         navAgent = GetComponent<NavMeshAgent>();
     }
@@ -40,7 +40,7 @@ public class BimbusMove : MonoBehaviour
         if (!stats.isDead)
         {
             speed = navAgent.velocity.magnitude / navAgent.speed;
-            animator.SetFloat("speed", speed, animDelay, Time.deltaTime);
+            anim.SetFloat("speed", speed, animDelay, Time.deltaTime);
         }
     }
     IEnumerator GetUp()
