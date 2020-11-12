@@ -50,7 +50,7 @@ public class BimbuStats : MonoBehaviour
 
     public void ReceiveDamage(float dmg)
     {
-        dmg -= (def / 3);
+        dmg -= ((float)def / 3);
         if (dmg < 0)
         {
             dmg = 0;
@@ -62,6 +62,7 @@ public class BimbuStats : MonoBehaviour
         }
         else
         {
+            isDead = true;
             health = 0;
         }
     }
@@ -71,11 +72,7 @@ public class BimbuStats : MonoBehaviour
         if (age >= maxAge) isDead = true;
         hunger -= (Time.deltaTime  + Random.Range(0f, 0.005f)) / 20;
         thirst -= (Time.deltaTime  + Random.Range(0f, 0.005f)) / 30;
-        if(health <= 0)
-            {
-            isDead = true;
-            health = 0;
-            }
+
         if(isDead && !deathRoutine)
             {
             StartCoroutine (Death());    

@@ -12,7 +12,6 @@ public class BimbusMove : MonoBehaviour
     private BimbuStats stats;
     public float riseSpeed;
     public Transform transformo;
-    private bool rising;
     public float speed = 0;
 
     public void Start()
@@ -42,14 +41,5 @@ public class BimbusMove : MonoBehaviour
             speed = navAgent.velocity.magnitude / navAgent.speed;
             anim.SetFloat("speed", speed, animDelay, Time.deltaTime);
         }
-    }
-    IEnumerator GetUp()
-    {
-
-        var step = riseSpeed * Time.deltaTime;
-        rising = true;
-        yield return new WaitForSeconds(0.2f);
-        Quaternion.RotateTowards(transformo.rotation, transformo.rotation,step);
-        rising = false;
     }
 }
