@@ -10,7 +10,7 @@ public class CameraControls : MonoBehaviour
     public bool isFast;
     public float cameraDistanceMax = 100;
     public float cameraDistanceMin = 15;
-    public float cameraDistanceGoal;
+    public float cameraDistanceGoal = 30;
     public float scrollSpeed = 5f;
     public Transform cam;
 

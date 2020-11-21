@@ -35,6 +35,7 @@ public class WanderAI : MonoBehaviour
             switch(_state)
             {
                 case 0:
+                    
                     StartCoroutine(Wander());
                     break;
             }
@@ -72,6 +73,7 @@ public class WanderAI : MonoBehaviour
 
     IEnumerator Wander()
     {
+        
         if(_state != STATES.DEAD)
         {
             float walkWait = Random.Range(0.1f, 4f);

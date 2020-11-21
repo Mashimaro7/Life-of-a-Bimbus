@@ -62,7 +62,7 @@ public class LocalizationSystem
 
         return value;
     }
-
+#if UNITY_EDITOR
     public static void Add(string key, string value)
     {
         if (value.Contains("\""))
@@ -113,5 +113,5 @@ public class LocalizationSystem
 
         UpdateDictionaries();
     }
-
+#endif
 }

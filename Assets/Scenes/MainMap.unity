@@ -3597,7 +3597,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2105464042653145130, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -71.3
+      value: 2065
       objectReference: {fileID: 0}
     - target: {fileID: 2105464042653145130, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3643,13 +3643,33 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 102.4
       objectReference: {fileID: 0}
+    - target: {fileID: 2105464042653145132, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
+      propertyPath: m_StitchLightmapSeams
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105464042653145132, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105464042653145132, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
+      propertyPath: m_RenderingLayerMask
+      value: 4294967295
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105464042653145132, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
+      propertyPath: m_DynamicOccludee
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105464042653145132, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
+      propertyPath: m_ReflectionProbeUsage
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2105464042653145134, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
       propertyPath: m_Name
       value: Water
       objectReference: {fileID: 0}
     - target: {fileID: 2105464042653145134, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2105464042653145134, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
       propertyPath: m_IsActive
@@ -3661,6 +3681,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2105464042653145135, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
       propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2105464042653145135, guid: bdb8b21b9e885104bbd7e0faa87746ea, type: 3}
+      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
