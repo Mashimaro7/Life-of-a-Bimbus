@@ -16,7 +16,7 @@ public enum STATES
 public class WanderAI : MonoBehaviour
 {
     private STATES _state = 0;
-    private bool _isWalking = false;
+    private bool _isWalking = false, _isWandering;
     [SerializeField] private float wanderRange = 6, minWanderRange = 2;
     public BimbuStats bimbus;
     public Rigidbody rb;
@@ -35,8 +35,10 @@ public class WanderAI : MonoBehaviour
             switch(_state)
             {
                 case 0:
-                    
-                    StartCoroutine(Wander());
+                    if (!_isWandering)
+                    {
+                        StartCoroutine(Wander());
+                    }
                     break;
             }
         }
@@ -73,7 +75,7 @@ public class WanderAI : MonoBehaviour
 
     IEnumerator Wander()
     {
-        
+        _isWandering = true;
         if(_state != STATES.DEAD)
         {
             float walkWait = Random.Range(0.1f, 4f);

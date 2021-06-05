@@ -25,8 +25,7 @@ public class TimeOfDay : MonoBehaviour
         maxTime = maxDayTime + maxNightTime;
         sunLight = this.transform.Find("Sun").GetComponent<Light>() ;
         moonLight = this.transform.Find("Moon").GetComponent<Light>();
-        bimbi = new List<BimbuStats>();
-        bimbi.Add(FindObjectOfType<BimbuStats>());
+        //bimbi.AddRange(FindObjectsOfType<BimbuStats>()); 
         weather = FindObjectOfType<WeatherControl>();
         sunInitIntense = sunLight.intensity;
         seasons = new string[] { "IDSpring", "IDSummer", "IDFall", "IDWinter" };
@@ -53,8 +52,10 @@ public class TimeOfDay : MonoBehaviour
             StartCoroutine(MoonShine());
         }
         if (calendarDay > 40) calendarDay = 1;
+
         timeOfDay += (Time.deltaTime / maxTime) * timeMultiplier;
         if (timeOfDay > timeToTurnNight && !isNight) TurnNight();
+
         if (timeOfDay > 1)
         {
             timeOfDay = 0;

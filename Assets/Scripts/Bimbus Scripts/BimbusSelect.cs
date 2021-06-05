@@ -77,7 +77,7 @@ public class BimbusSelect : MonoBehaviour
                     }
                 }
 
-                else if (hit.transform.CompareTag("Enemy"))
+                else if (hit.transform.tag == "Enemy")
                     {
 
                     }
